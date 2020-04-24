@@ -8,7 +8,7 @@ module chemical_mechanism_qxz_data
   ! System dimensions
 
   !> Number of gas-phase species
-  integer, parameter, public :: NUM_SPEC = 3
+  integer, parameter, public :: NUM_SPEC = 4
   !> Number of gas-phase reactions (all photolysis for this example)
   integer, parameter, public :: NUM_RXN  = 4
 

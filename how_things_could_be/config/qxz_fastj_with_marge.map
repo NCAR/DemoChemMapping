@@ -1,0 +1,6 @@
+TALK           BUTENE         0.24
+TALK           CYCLOHEXENE    0.7
+BIGALK         BUTENE         0.09
+BIGALK         CYCLOHEXENE    0.43
+IALK           BUTENE         0.8
+ETHENE         ETHENE         1.0

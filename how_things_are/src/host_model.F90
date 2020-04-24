@@ -2,7 +2,8 @@
 !!
 !! Mock version of a host model that uses hard-coded mapping between
 !! components (not that this is how models really are - just to
-!! demonstrate how mapping looks)
+!! demonstrate how mapping looks for mixtures of explicit and lumped
+!! chemical species)
 !!
 !! !!! Extremely Dangerous !!! Do not try at home
 program host_model
