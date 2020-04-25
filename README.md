@@ -18,6 +18,7 @@ Each of the models can be built and run from their folder with:
 mkdir build
 cd build
 cmake ..
+make
 ./host_model
 ```
 
