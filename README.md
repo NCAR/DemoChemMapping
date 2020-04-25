@@ -2,9 +2,9 @@
 Mock models for CCPP-framework mapping question
 
 
-**NOTE:** There is no real science in these mock models. The *only* purpose of this demo is to demonstrate the *type* of logic used to build maps between chemical mechanisms, emissions modules, photolysis modules, etc.---just in general.
+**NOTE:** This is a *demonstration* of the *types* of logic used to build maps between chemical mechanisms, emissions modules, photolysis modules, etc.  It is not a science code base.
 
-There are three folders for different mock models in the demo:
+There are three folders, each of which demonstrates an approach to the mapping:
 
 | Folder                 | Model Description                                                           |
 |------------------------| ----------------------------------------------------------------------------|
@@ -70,11 +70,11 @@ In our example, adding butene to the `QX5` mechanism implicitly changes the mean
 
 ### Emissions
 
-Emissions models can be much more chemically resolved than chemical mechanisms used in large models. In our example, the `MARGE` emissions module is biogenics focused the `ARES` is focused on anthropogenic emissions. The mapping is tightly tied to how `QX5` and `QXZ` define their various species and how emitted species are defined in the emissions module.
+Emissions models can have more explicit chemical representation than the mechanisms used in large models. In our example, the `MARGE` module focuses on biogenic emissions and the `ARES` module is focuses on anthropogenic emissions. The mapping between emissions and mechanisms is tightly tied to how `QX5` and `QXZ` define their various species and how emitted species are defined in each emissions module.
 
 **CH3** The definition of what a lumped chemical species is in a chemical mechanism makes a big difference in how other modules interact with it.
 
-The logic used to map among our imaginary emissions schemes and chemical mechanisms is in comments in the `how_things_are` source code with the mapping:
+The logic used to map among these emissions schemes and chemical mechanisms is in comments in the `how_things_are` source code with the mapping:
 
 | Emissions Module | source code with mapping description     |
 | -----------------| -----------------------------------------|
@@ -84,11 +84,11 @@ The logic used to map among our imaginary emissions schemes and chemical mechani
 
 **SI1** Researchers adding a new species to a chemical mechanism may not realize that as they implicitly change the meaning of other chemical species (**CH2**) on which other modules rely, they are affecting the way mapping to and from other modules should be. 
 
-This is particularly true when the mapping logic has been fossilized under many layers of Fortran77 sedimentation, as could be imagined for the `how_things_are` model. 
+This is particularly true when the mapping logic has been fossilized under many layers of Fortran77 sedimentation, as shown in the `how_things_are` model. 
 
 #### Photolysis
 
-In yet another cruel twist of fate, photolysis rates are not tied to specific chemical species, but to specific reactions. For example, ozone undergoes two different photolysis reactions with different products and different rates (this is actual science):
+In yet another cruel twist of fate, photolysis rates are not tied to specific chemical species, but to specific reactions. For example, ozone undergoes two different photolysis reactions with different products and different rates.  For example, rates for both of these are examined in the science literature:
 
 ```
 O3 + hv -> O(3P) + O2
@@ -108,9 +108,9 @@ It is even feasible that the mapping between a photolysis module would depend on
 
 ## How things are
 
-The `how_things_are` model is intended give a rough example of a hard-codedly mapped model that can run our 8 scenarios. 
+The `how_things_are` model gives an example of mapping in a hard-coded model that can run our 8 scenarios. 
 
-In addition to the implicit changes to mapping when adding new chemical species (**SI1**), there are several other sustainability issues related to this approach.
+In addition to issue **SI1** (the implicit changes to mapping when adding new chemical species), there are several other sustainability issues related to this approach.
 
 **SI2** Adding a new module can involve changing the source code of other modules and the host model.
 
@@ -132,7 +132,7 @@ In our `how_things_are` model, adding a photolysis module would involve 4 such s
 
 ## How things could be
 
-The `how_things_could_be` model is one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed. There are many things that could be improved in this model, but it demonstrates that these issues are solvable.
+The `how_things_could_be` model is one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed. This demonstration shows one example of how these challenges and issues could be addressed.
 
 **F1** There is no global naming scheme.
 
