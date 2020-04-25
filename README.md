@@ -70,11 +70,11 @@ In our example, adding butene to the `QX5` mechanism implicitly changes the mean
 
 ### Emissions
 
-Emissions models can have more explicit chemical representation than the mechanisms used in large models. In our example, the `MARGE` module focuses on biogenic emissions and the `ARES` module is focuses on anthropogenic emissions. The mapping between emissions and mechanisms is tightly tied to how `QX5` and `QXZ` define their various species and how emitted species are defined in each emissions module.
+Emissions models can have more explicit chemical representation than the mechanisms used in large models. In our example, the `MARGE` module focuses on biogenic emissions and the `ARES` module focuses on anthropogenic emissions. The mapping between emissions and mechanisms is tightly tied to how `QX5` and `QXZ` define their various species and how emitted species are defined in each emissions module.
 
 **CH3** The definition of what a lumped chemical species is in a chemical mechanism makes a big difference in how other modules interact with it.
 
-The logic used to map among these emissions schemes and chemical mechanisms is in comments in the `how_things_are` source code with the mapping:
+The logic used to map among emissions schemes and chemical mechanisms is in comments in the `how_things_are` source code with the mapping:
 
 | Emissions Module | source code with mapping description     |
 | -----------------| -----------------------------------------|
@@ -84,7 +84,7 @@ The logic used to map among these emissions schemes and chemical mechanisms is i
 
 **SI1** Researchers adding a new species to a chemical mechanism may not realize that as they implicitly change the meaning of other chemical species (**CH2**) on which other modules rely, they are affecting the way mapping to and from other modules should be. 
 
-This is particularly true when the mapping logic has been fossilized under many layers of Fortran77 sedimentation, as shown in the `how_things_are` model. 
+This is particularly true when the mapping logic has been fossilized under many layers of Fortran77 sedimentation, as could be imagined for the `how_things_are` model. 
 
 #### Photolysis
 
