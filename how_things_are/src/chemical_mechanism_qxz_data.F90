@@ -16,9 +16,9 @@ module chemical_mechanism_qxz_data
 
   !> Explicit - Ethene (H2C=CH2)
   integer, parameter, public :: GAS_SPEC_ETHENE = 1
-  !> Lumped - Any terminal alkene (-CH2=CH3) with less than 7 carbons that isn't ethene
+  !> Lumped - Any terminal alkene (-CH=CH2) with less than 7 carbons that isn't ethene
   integer, parameter, public :: GAS_SPEC_TALK   = 2
-  !> Lumped - Any internal alkene (-CH2=CH2-) with less than 7 carbons
+  !> Lumped - Any internal alkene (-CH=CH-) with less than 7 carbons
   integer, parameter, public :: GAS_SPEC_IALK   = 3
   !> Lumped - Any alkene with at least 7 carbons
   !! Notice that this big alk is different from that of our mock QX5
