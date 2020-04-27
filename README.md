@@ -88,7 +88,7 @@ This is particularly true when the mapping logic has been fossilized under many 
 
 #### Photolysis
 
-In yet another cruel twist of fate, photolysis rates are not tied to specific chemical species, but to specific reactions. For example, ozone undergoes two different photolysis reactions with different products and different rates.  For example, rates for both of these are examined in the science literature:
+In yet another cruel twist of fate, photolysis rates are not tied to specific chemical species, but to specific reactions. For example, ozone undergoes two different photolysis reactions with different products and different rates that are part of most chemical mechanisms:
 
 ```
 O3 + hv -> O(3P) + O2
@@ -132,7 +132,7 @@ In our `how_things_are` model, adding a photolysis module would involve 4 such s
 
 ## How things could be
 
-The `how_things_could_be` model is one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed. This demonstration shows one example of how these challenges and issues could be addressed.
+The `how_things_could_be` model demonstrates one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed.
 
 **F1** There is no global naming scheme.
 
