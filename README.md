@@ -12,14 +12,13 @@ There are three folders, each of which demonstrates an approach to the mapping:
 | `how_things_could_be/` | [COMPLETE] One approach to improving sustainability over the `how_things_are` approach |
 | `how_things_must_be/`  | [UNFINISHED] A mock model addressing the code sustainability issues described below that uses CCPP-framework |
 
-Each of the models can be built and run from their folder with:
+Each of the models can be built from their folder with:
 
 ```
 mkdir build
 cd build
 cmake ..
 make
-./host_model
 ```
 
 There are challenges related to the mapping of namespaces between model components. We are using this code to try to explicitly describe what these are. (They are labelled **CH#** in the following discussion.) Similarly, sustainability issues exist with current model designs that we are trying to address while developing the MUSICA infrastructure. (These are labelled **SI#** below.) Features of the `how_things_could_be` model that address the challenges and sustainability issues are labelled **F#**.
@@ -34,10 +33,10 @@ All three models run the same 8 scenarios, which are all possible combinations o
 | 2        | QX5                | MARGE     | FastJ      |
 | 3        | QX5                | ARES      | TUV        |
 | 4        | QX5                | ARES      | FastJ      |
-| 1        | QXZ                | MARGE     | TUV        |
-| 2        | QXZ                | MARGE     | FastJ      |
-| 3        | QXZ                | ARES      | TUV        |
-| 4        | QXZ                | ARES      | FastJ      |
+| 5        | QXZ                | MARGE     | TUV        |
+| 6        | QXZ                | MARGE     | FastJ      |
+| 7        | QXZ                | ARES      | TUV        |
+| 8        | QXZ                | ARES      | FastJ      |
 
 Each imaginary chemical mechanism has a unique set of lumped and explicit chemical species and photolysis reactions.
 
@@ -108,7 +107,22 @@ It is even feasible that the mapping between a photolysis module would depend on
 
 ## How things are
 
-The `how_things_are` model gives an example of mapping in a hard-coded model that can run our 8 scenarios. 
+The `how_things_are` model gives an example of mapping in a hard-coded model that can run our 8 scenarios. The model can be built and the eigth scenarios run from the `how_things_are/` folder with:
+
+```
+mkdir build
+cd build
+cmake ..
+make
+./host_model 1
+./host_model 2
+./host_model 3
+./host_model 4
+./host_model 5
+./host_model 6
+./host_model 7
+./host_model 8
+```
 
 In addition to issue **SI1** (the implicit changes to mapping when adding new chemical species), there are several other sustainability issues related to this approach.
 
@@ -132,7 +146,24 @@ In our `how_things_are` model, adding a photolysis module would involve 4 such s
 
 ## How things could be
 
-The `how_things_could_be` model demonstrates one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed.
+The `how_things_could_be` model demonstrates one way that the challenges (**CH1-4**) and sustainability issues (**S1-3**) could be addressed. The model can be built and the eigth scenarios run from the `how_things_could_be/` folder with:
+
+```
+mkdir build
+cd build
+cmake ..
+make
+cp ../config/* .
+./host_model qx5.config marge.config tuv.config qx5_marge.map qx5_tuv_with_marge.map
+./host_model qx5.config marge.config fastj.config qx5_marge.map qx5_fastj_with_marge.map
+./host_model qx5.config ares.config tuv.config qx5_ares.map qx5_tuv_with_ares.map
+./host_model qx5.config ares.config fastj.config qx5_ares.map qx5_fastj_with_ares.map
+./host_model qxz.config marge.config tuv.config qxz_marge.map qxz_tuv_with_marge.map
+./host_model qxz.config marge.config fastj.config qxz_marge.map qxz_fastj_with_marge.map
+./host_model qxz.config ares.config tuv.config qxz_ares.map qxz_tuv_with_ares.map
+./host_model qxz.config ares.config fastj.config qxz_ares.map qxz_fastj_with_ares.map
+```
+
 
 **F1** There is no global naming scheme.
 
