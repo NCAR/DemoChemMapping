@@ -98,6 +98,8 @@ Lumped chemical species are hard to label, but reactions are ridiculously hard t
 
 It is even feasible that the mapping between a photolysis module would depend on what emissions module is used, as the chemical resolution of a chemical mechanism is sometimes lower than emissions or photolysis modules. An example of how photolysis mapping could change when you change the emissions scheme is described in the comments in:
 
+(NOTE: In our imaginary scenarios, we use alkenes because we have historically used BIGALK in examples of why mapping is tricky. Alkenes don't photolyze in the atmosphere as far as I know, but the arguments would apply to, e.g., lumped aldehydes or ketones.)
+
 | Photolysis Module | source code with mapping description      |
 |-------------------|-------------------------------------------|
 | TUV               | `how_things_are/src/photolysis_tuv.F90`   |
